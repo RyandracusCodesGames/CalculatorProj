@@ -1,4 +1,4 @@
-﻿  calculatrice.cpp
-C:\Users\ryand\source\repos\Calculatrice\Calculatrice\calculatrice.cpp(119,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\ryand\source\repos\Calculatrice\Calculatrice\calculatrice.cpp(89): warning C4715: 'GetOperatorFromString': not all control paths return a value
+﻿  main.cpp
+C:\Users\ryand\source\repos\Calculatrice\Calculatrice\main.cpp(148,21): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ryand\source\repos\Calculatrice\Calculatrice\main.cpp(760,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Calculatrice.vcxproj -> C:\Users\ryand\source\repos\Calculatrice\x64\Debug\Calculatrice.exe
