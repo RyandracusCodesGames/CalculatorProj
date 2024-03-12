@@ -15,7 +15,7 @@ bool string_has_operator(std::string str) {
 void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<std::string> &trace) {
 	bool change = false;
 	char first_op;
-	int count = 0;
+	int count = 0, count2 = 0;
 
 	int found = 0;
 	if (string_has_operator(str)) {
@@ -25,13 +25,14 @@ void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<
 		for (i = 1; i < str.length(); i++) {
 			trace.push_back("IF STR OF I EQ OP");
 
+			std::cout << "char is " << str[i] << std::endl;
+
 			if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/' || str[i] == '%') {
 				change = true;
 				if (count == 0) {
 					first_op = str[i];
+					count++;
 				}
-
-				count++;
 			}
 
 			trace.push_back("IF CHANGE EQ TRUE");
@@ -42,12 +43,20 @@ void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<
 			}
 			else {
 				trace.push_back("THEN AND IF STR NOT EQ OP");
-				if (first_op == '-') {
+				if (count2 == 0) {
 					i++;
+					count2 = 1;
 				}
 
-				if (str[i] != '+' && str[i] != '*' && str[i] != '/' && str[i] != '%') {
-					op2.push_back(str[i]);
+				if (first_op == '-') {
+					if (str[i] != '+' && str[i] != '*' && str[i] != '/' && str[i] != '%') {
+						op2.push_back(str[i]);
+					}
+				}
+				else {
+					if (str[i] != '+' && str[i] != '*' && str[i] != '/' && str[i] != '%') {
+						op2.push_back(str[i]);
+					}
 				}
 			}
 		}

@@ -1,4 +1,4 @@
 ﻿  calculatrice.cpp
-C:\Users\ryand\source\repos\Calculatrice\Calculatrice\calculatrice.cpp(142,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\ryand\source\repos\Calculatrice\Calculatrice\calculatrice.cpp(112): warning C4715: 'GetOperatorFromString': not all control paths return a value
+C:\Users\ryand\source\repos\Calculatrice\Calculatrice\calculatrice.cpp(151,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ryand\source\repos\Calculatrice\Calculatrice\calculatrice.cpp(121): warning C4715: 'GetOperatorFromString': not all control paths return a value
   Calculatrice.vcxproj -> C:\Users\ryand\source\repos\Calculatrice\x64\Debug\Calculatrice.exe
