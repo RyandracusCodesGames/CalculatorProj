@@ -14,6 +14,9 @@ bool string_has_operator(std::string str) {
 
 void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<std::string> &trace) {
 	bool change = false;
+	char first_op;
+	int count = 0;
+
 	int found = 0;
 	if (string_has_operator(str)) {
 		op1.push_back(str[0]);
@@ -24,6 +27,11 @@ void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<
 
 			if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/' || str[i] == '%') {
 				change = true;
+				if (count == 0) {
+					first_op = str[i];
+				}
+
+				count++;
 			}
 
 			trace.push_back("IF CHANGE EQ TRUE");
@@ -34,8 +42,9 @@ void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<
 			}
 			else {
 				trace.push_back("THEN AND IF STR NOT EQ OP");
-
-				//i++;
+				if (first_op == '-') {
+					i++;
+				}
 
 				if (str[i] != '+' && str[i] != '*' && str[i] != '/' && str[i] != '%') {
 					op2.push_back(str[i]);
