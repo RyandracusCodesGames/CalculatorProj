@@ -625,7 +625,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, 
 					func.push_back('9');
 				}
 
-				if (!string_has_operator(func) || func[0] == '-') {
+				if (!string_has_operator(func) || func[0] == '-'){
 					if (input->add_pressed) {
 						func.push_back('+');
 						can_use_decimal = true;
@@ -683,6 +683,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, 
 
 					ParseFunc(func, op1, op2, trace);
 
+					std::cout << "op1: " << op1 << std::endl;
+					std::cout << "op2: " << op2 << std::endl;
+
 					trace.push_back("EXEC PARSE FUNC");
 					trace.push_back("IF STRING HAS OP");
 					trace.push_back("FOR I EQ 1 TO STR.LEN");
@@ -692,6 +695,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, 
 
 					expr->operand1 = StrToOperand(op1);
 					expr->operand2 = StrToOperand(op2);
+
+					std::cout << "op1: " << expr->operand1 << std::endl;
+					std::cout << "op2: " << expr->operand2 << std::endl;
 
 					trace.push_back("EXEC STRTOOPERAND FUNC OP1");
 					trace.push_back("EXEC STRTOOPERAND FUNC OP2");

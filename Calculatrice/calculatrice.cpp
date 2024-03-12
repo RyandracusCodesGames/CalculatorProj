@@ -1,5 +1,6 @@
 #include "calculatrice.h"
 #include <string>
+#include <iostream>
 
 bool string_has_operator(std::string str) {
 	int i;
@@ -39,6 +40,7 @@ void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<
 		}
 	}
 }
+
 
 Operator CharToOperator(char op){
 
@@ -87,7 +89,14 @@ Operator GetOperatorFromString(std::string func) {
 }
 
 float StrToOperand(std::string operand){
-	return std::stof(operand);
+	std::string op;
+	if (operand[1] == '-') {
+		op = operand.substr(1, operand.length());
+	}
+	else {
+		op = operand;
+	}
+	return std::stof(op);
 }
 
 void CalculateResult(Expr* expr){

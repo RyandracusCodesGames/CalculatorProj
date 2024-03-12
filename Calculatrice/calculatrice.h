@@ -29,6 +29,7 @@ typedef struct Expr{
 }Expr;
 
 bool string_has_operator(std::string str);
+bool second_op_is_neg(std::string func);
 void ParseFunc(std::string str, std::string &op1, std::string &op2, std::vector<std::string> &trace);
 Operator GetOperatorFromString(std::string func);
 Operator CharToOperator(char op);
